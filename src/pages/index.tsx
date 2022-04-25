@@ -42,7 +42,7 @@ export default function Home({ product }: HomeProps) {
 // Server Side => indexação google mas com dados dinânicos do usuário
 // Static Site Generation - página estática com valores atualizados de tempo em tempo - não permite dados dinâmicos para cada user
 
-export const getServerSideProps: GetServerSideProps = async () => {
+export const getStaticProps: GetServerSideProps = async () => {
   const price = await stripe.prices.retrieve("price_1KoWJMFwfhsw00FcDuKsve0H", {
     expand: ["product"],
   });
